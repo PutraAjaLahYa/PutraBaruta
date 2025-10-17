@@ -1,217 +1,166 @@
-<!doctype html>
-<html lang="id">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Toko Vanesa — Katalog Interior</title>
-    <!-- Bootstrap 5.2.2 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-      :root{
-        --accent:#6f42c1;
-        --muted:#6c757d;
-      }
-      body{font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:#f8f9fa; color:#222}
-      .navbar-brand{font-weight:700; letter-spacing:0.2px}
-      .hero{
-        background: linear-gradient(180deg, rgba(111,66,193,0.08), rgba(111,66,193,0.02));
-        border-radius:12px;
-        padding:2.5rem;
-        margin-bottom:1.25rem;
-      }
-      .card-img-top{height:220px; object-fit:cover; border-top-left-radius: .5rem; border-top-right-radius:.5rem}
-      .product-card{border:0; border-radius:12px; box-shadow:0 6px 18px rgba(15,15,30,0.06)}
-      .price{font-weight:700; color:var(--accent)}
-      .tag{font-size:12px; background:#f1e9ff; color:var(--accent); padding:4px 8px; border-radius:999px}
-      .modal-img{max-height:60vh; object-fit:cover; width:100%; border-radius:8px}
-      footer{padding:2rem 0; color:var(--muted)}
-      @media (max-width:576px){ .card-img-top{height:180px} }
-    </style>
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
-      <div class="container">
-        <a class="navbar-brand" href="#">Toko <span style="color:var(--accent)">Vanesa</span></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio - Putra Baruta</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+      color: #333;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(120deg, #0d6efd, #6610f2);
+      color: white;
+      border-bottom-left-radius: 50% 10%;
+      border-bottom-right-radius: 50% 10%;
+    }
+    header h1 {
+      font-size: 3rem;
+      font-weight: 600;
+      animation: fadeInDown 1.5s ease;
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .section {
+      padding: 80px 0;
+    }
+    .description {
+      background: white;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      max-width: 900px;
+      margin: 60px auto;
+      animation: fadeInUp 1.2s ease;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .education h3 {
+      color: #0d6efd;
+      font-weight: 600;
+    }
+    .education-item {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+    .education-item:hover {
+      transform: translateY(-5px);
+    }
+    .projects {
+      background: #f8f9fa;
+    }
+    .folder {
+      text-align: center;
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .folder:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+    .folder i {
+      font-size: 50px;
+      color: #0d6efd;
+      margin-bottom: 10px;
+    }
+    footer {
+      background: #212529;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
 
-        <div class="collapse navbar-collapse" id="navMenu">
-          <ul class="navbar-nav ms-auto align-items-center">
-            <li class="nav-item me-3"><a class="nav-link" href="#">Beranda</a></li>
-            <li class="nav-item me-3"><a class="nav-link" href="#catalog">Produk</a></li>
-            <li class="nav-item"><a class="btn btn-outline-primary" href="#contact">Kontak</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+  <header>
+    <h1>Halo, Saya <span id="nama">Putra Baruta</span></h1>
+    <p class="lead">Selamat datang di portofolio pribadi saya</p>
+  </header>
 
+  <section class="description">
+    <p class="text-center fs-5">
+      Saya mahasiswa Teknik Informatika Universitas Muhammadiyah Riau. Pada saat portofolio ini dibuat, saya berada di semester 7.<br>
+      Saya handal dalam menggunakan JavaScript dan PHP.<br>
+      Saya masih dalam masa belajar dengan membuat web portofolio ini. Jika ada saran, tolong disampaikan. Terima kasih.
+    </p>
+  </section>
+
+  <section class="section education container">
+    <h2 class="text-center mb-5">Jenjang Pendidikan</h2>
+    <div class="education-item">
+      <h3>Sekolah Menengah Pertama </h3>
+      <p>SMPN 4 Tarai Bangun - 2016 sampai 2019</p>
+    </div>
+    <div class="education-item">
+      <h3>Sekolah Menengah Kejuruan </h3>
+      <p>SMK Muhammadiyah 3 Pekanbaru - 2019 sampai 2022</p>
+    </div>
+    <div class="education-item">
+      <h3>Perguruan Tinggi </h3>
+      <p>Universitas Muhammadiyah Riau - 2022 sampai 2026</p>
+    </div>
+  </section>
+
+  <section class="section projects">
     <div class="container">
-      <section class="hero mt-4">
-        <div class="row align-items-center">
-          <div class="col-md-7">
-            <h1 class="mb-2">Katalog Interior — <span style="color:var(--accent)">Toko Vanesa</span></h1>
-            <p class="text-muted">Pilih furnitur & dekorasi berkualitas untuk rumahmu. Klik sebuah item untuk melihat detail, gambar penuh, dan harga.</p>
-          </div>
-          <div class="col-md-5 text-md-end mt-3 mt-md-0">
-            <div class="d-inline-block text-start">
-              <label class="form-label small mb-1">Cari produk</label>
-              <div class="input-group">
-                <input id="searchInput" type="search" class="form-control" placeholder="Contoh: kursi, lampu, meja" aria-label="Search">
-                <button id="searchBtn" class="btn btn-primary">Cari</button>
-              </div>
-            </div>
+      <h2 class="text-center mb-5">Proyek Saya</h2>
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-4 col-sm-6">
+          <div class="folder" onclick="window.open(' https://putraajalahya.github.io/Kalkulator ', '_blank')">
+            <i class="bi bi-folder-fill"></i>
+            <h5>Kalkulator</h5>
+            <p>Klik untuk melihat proyek</p>
           </div>
         </div>
-      </section>
-
-      <section id="catalog">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h4 class="mb-0">Semua Produk</h4>
-          <div class="text-muted small">Menampilkan <span id="count">8</span> item</div>
-        </div>
-
-        <div id="gallery" class="row g-3">
-          <!-- Product cards injected here -->
-        </div>
-      </section>
-
-      <section id="contact" class="mt-5">
-        <div class="card p-4 product-card">
-          <div class="row g-3 align-items-center">
-            <div class="col-md-8">
-              <h5 class="mb-1">Butuh bantuan?</h5>
-              <p class="mb-0 text-muted">Hubungi kami untuk kustom desain, permintaan ukuran, atau penawaran harga grosir.</p>
-            </div>
-            <div class="col-md-4 text-md-end">
-              <a href="mailto:vanesa@example.com" class="btn btn-primary">Email: vanesa@example.com</a>
-            </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="folder" onclick="window.open(' https://putraajalahya.github.io/Kalkulator-Ipk ', '_blank')">
+            <i class="bi bi-folder-fill"></i>
+            <h5>Kalkulator IPK</h5>
+            <p>Klik untuk melihat proyek</p>
           </div>
         </div>
-      </section>
-
-      <footer class="mt-5 text-center">
-        <small>&copy; <span id="year"></span> Toko Vanesa — Interior & Dekorasi</small>
-      </footer>
-    </div>
-
-
-    <!-- Product detail modal -->
-    <div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-xl modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-body p-4">
-            <div class="row g-4">
-              <div class="col-lg-7">
-                <img id="modalImage" src="" alt="" class="modal-img shadow-sm">
-              </div>
-              <div class="col-lg-5">
-                <h3 id="modalTitle"></h3>
-                <div class="d-flex align-items-center mb-2">
-                  <div class="me-3 price" id="modalPrice"></div>
-                  <div class="tag" id="modalTag"></div>
-                </div>
-                <p id="modalDesc" class="text-muted"></p>
-                <div class="mt-4">
-                  <button class="btn btn-primary me-2">Tambah ke Keranjang</button>
-                  <button class="btn btn-outline-secondary" data-bs-dismiss="modal">Tutup</button>
-                </div>
-                <hr class="my-4">
-                <small class="text-muted">Kode barang: <span id="modalCode"></span></small>
-              </div>
-            </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="folder" onclick="window.open(' https://telagasakinahmempurahomestay.com ', '_blank')">
+            <i class="bi bi-folder-fill"></i>
+            <h5>Homestay</h5>
+            <p>Klik untuk melihat proyek</p>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="folder" onclick="window.open(' https://perpustakaan16plg.web.id/login.php ', '_blank')">
+            <i class="bi bi-folder-fill"></i>
+            <h5>Perpustakaan</h5>
+            <p>Klik untuk melihat proyek</p>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- Bootstrap JS & dependencies -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      const products = [
-        {id:'VN001', title:'Kursi Santai Oslo', price:790000, tag:'Kursi', img:'https://images.unsplash.com/photo-1549187774-b4e9a1f1d5d6?auto=format&fit=crop&w=1200&q=60', desc:'Kursi santai ergonomis, rangka kayu solid dan bantalan empuk. Cocok untuk ruang tamu atau sudut baca.'},
-        {id:'VN002', title:'Meja Sisi Minimalis', price:450000, tag:'Meja', img:'https://images.unsplash.com/photo-1567016574561-2b4d8c6b8d84?auto=format&fit=crop&w=1200&q=60', desc:'Meja sisi bergaya skandinavia dengan finishing matte. Ideal untuk lampu meja atau tanaman kecil.'},
-        {id:'VN003', title:'Lampu Gantung Aura', price:620000, tag:'Lampu', img:'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=60', desc:'Lampu gantung modern dengan pencahayaan hangat, cocok untuk ruang makan atau area lounge.'},
-        {id:'VN004', title:'Rak Dinding Modular', price:520000, tag:'Rak', img:'https://images.unsplash.com/photo-1618221860096-6a7b7b3b6b49?auto=format&fit=crop&w=1200&q=60', desc:'Sistem rak modular yang mudah disusun ulang. Material kuat dan pemasangan sederhana.'},
-        {id:'VN005', title:'Sofa Dua Dudukan', price:3200000, tag:'Sofa', img:'https://images.unsplash.com/photo-1618221669407-6f2a8b8f9b1d?auto=format&fit=crop&w=1200&q=60', desc:'Sofa modern dua dudukan dengan upholstery premium, nyaman dan elegan.'},
-        {id:'VN006', title:'Karpet Anyaman', price:380000, tag:'Karpet', img:'https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1200&q=60', desc:'Karpet anyaman alami yang menambah hangat suasana ruangan.'},
-        {id:'VN007', title:'Lemari Serbaguna', price:1750000, tag:'Lemari', img:'https://images.unsplash.com/photo-1582582494705-3be3a4f6d5f9?auto=format&fit=crop&w=1200&q=60', desc:'Lemari penyimpanan besar dengan rak yang dapat disesuaikan.'},
-        {id:'VN008', title:'Cermin Dinding Elegan', price:290000, tag:'Dekor', img:'https://images.unsplash.com/photo-1524758631624-2a1b9f1c6a4d?auto=format&fit=crop&w=1200&q=60', desc:'Cermin berbingkai tipis yang membuat ruangan terasa lebih luas.'}
-      ];
+  <footer>
+    <p>© 2025 Portofolio Putra Baruta.</p>
+  </footer>
 
-      const gallery = document.getElementById('gallery');
-      const countEl = document.getElementById('count');
-      const yearEl = document.getElementById('year');
-      yearEl.textContent = new Date().getFullYear();
-
-      function formatRupiah(n){
-        return new Intl.NumberFormat('id-ID', {style:'currency', currency:'IDR'}).format(n);
-      }
-
-      function render(list){
-        gallery.innerHTML='';
-        list.forEach(p=>{
-          const col = document.createElement('div');
-          col.className='col-12 col-sm-6 col-md-4 col-lg-3';
-          col.innerHTML = `
-            <div class="card product-card h-100">
-              <img src="${p.img}" class="card-img-top" alt="${p.title}">
-              <div class="card-body d-flex flex-column">
-                <div class="d-flex justify-content-between mb-2 align-items-start">
-                  <h6 class="card-title mb-0">${p.title}</h6>
-                  <div class="text-end">
-                    <div class="price">${formatRupiah(p.price)}</div>
-                  </div>
-                </div>
-                <p class="text-muted small flex-grow-1">${p.desc.substring(0,90)}${p.desc.length>90?'...':''}</p>
-                <div class="d-flex justify-content-between align-items-center mt-3">
-                  <button class="btn btn-sm btn-outline-primary" data-id="${p.id}" data-bs-toggle="modal" data-bs-target="#productModal" data-title="${escapeHtml(p.title)}" data-price="${p.price}" data-img="${p.img}" data-desc="${escapeHtml(p.desc)}" data-tag="${p.tag}">Lihat</button>
-                  <small class="text-muted">${p.tag}</small>
-                </div>
-              </div>
-            </div>
-          `;
-          gallery.appendChild(col);
-        });
-        countEl.textContent = list.length;
-      }
-
-      // escape simple HTML to keep attributes safe
-      function escapeHtml(str){
-        return str.replaceAll('"','&quot;').replaceAll("'",'&#39;');
-      }
-
-      // initial render
-      render(products);
-
-      // modal population
-      const productModal = document.getElementById('productModal');
-      productModal.addEventListener('show.bs.modal', function (event) {
-        const button = event.relatedTarget;
-        const title = button.getAttribute('data-title');
-        const price = Number(button.getAttribute('data-price'));
-        const img = button.getAttribute('data-img');
-        const desc = button.getAttribute('data-desc');
-        const tag = button.getAttribute('data-tag');
-        const id = button.getAttribute('data-id');
-
-        document.getElementById('modalTitle').textContent = title;
-        document.getElementById('modalPrice').textContent = formatRupiah(price);
-        document.getElementById('modalImage').src = img;
-        document.getElementById('modalDesc').textContent = desc;
-        document.getElementById('modalTag').textContent = tag;
-        document.getElementById('modalCode').textContent = id;
-      });
-
-      // simple search
-      document.getElementById('searchBtn').addEventListener('click', function(){
-        const q = document.getElementById('searchInput').value.trim().toLowerCase();
-        if(!q){ render(products); return; }
-        const filtered = products.filter(p=> (p.title + ' ' + p.desc + ' ' + p.tag).toLowerCase().includes(q));
-        render(filtered);
-      });
-
-      document.getElementById('searchInput').addEventListener('keydown', function(e){ if(e.key==='Enter'){ document.getElementById('searchBtn').click(); } });
-    </script>
-  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+</body>
 </html>
